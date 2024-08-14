@@ -10,18 +10,18 @@ void RunAllTests(void)
     CuString *output = CuStringNew();
     CuSuite *suite = CuSuiteNew();
 
-    // Dodajte testove u suit
+    // Dodavanje testove u suit
     CuSuiteAddSuite(suite, TestSuite_b64());
 
-    // Pokrenite sve testove
+    // Pokretanje testova
     CuSuiteRun(suite);
 
-    // Ispišite rezultate
+    // Ispis rezultata
     CuSuiteSummary(suite, output);
     CuSuiteDetails(suite, output);
     printf("%s\n", output->buffer);
 
-    // Očistite memoriju
+    // Memorija
     CuSuiteDelete(suite);
     CuStringDelete(output);
 }

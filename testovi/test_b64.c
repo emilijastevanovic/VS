@@ -2,20 +2,20 @@
 
 void Test_b64_decode(CuTest *tc)
 {
-    // Primer jednostavnog testa za b64_decode funkciju
-    const char *input = "SGVsbG8gd29ybGQ="; // "Hello world" base64 encoded
+    
+    const char *input = "SGVsbG8gd29ybGQ="; 
     const char *expected = "Hello world";
     size_t out_len;
     uint8_t *decoded = b64_decode((const uint8_t*)input, strlen(input), &out_len);
 
     CuAssertStrEquals(tc, expected, (const char*)decoded);
 
-    free(decoded); // Oslobodite memoriju
+    free(decoded);
 }
 
 void Test_b64_encode(CuTest *tc)
 {
-    // Primer jednostavnog testa za b64_encode funkciju
+   
     const uint8_t *input = (const uint8_t*)"Hello world";
     const char *expected = "SGVsbG8gd29ybGQ=";
     size_t out_len;
@@ -23,7 +23,7 @@ void Test_b64_encode(CuTest *tc)
 
     CuAssertStrEquals(tc, expected, encoded);
 
-    free(encoded); // Oslobodite memoriju
+    free(encoded); 
 }
 
 CuSuite* TestSuite_b64(void)
